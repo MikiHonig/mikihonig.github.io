@@ -1,3 +1,21 @@
 li:hover {
-    background-color: tomato;
+    background-color: white;
   }
+
+#lista {
+    border: 2px solid black;
+    width: 346px;
+    background-color: palevioletred;
+}
+
+div {
+    margin-bottom: 5px;
+}
+
+#egesz {
+    border: 2px solid black;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    width: 383px;
+    background-color: lightblue
+}

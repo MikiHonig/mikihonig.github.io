@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Document</title>
 
@@ -11,21 +11,27 @@
     <body>
 
 
+        <div id=egesz>
+
+
+            <h1>My simple todo list</h1>
+            
+            <div>
+                <input type="text" id="name" name="name" size="20" style="background-color: palevioletred;">
+                <input type="number" id="darab" name="darab" size="10" style="background-color: palevioletred;">
+            </div>
+            <div>
+                <button type="submit" id="kattincsButton" style="width: 350px">bevitel</button>
+            </div>
         
-
-
-        <h1>My simple todo list</h1>
-        <h2>Todos</h2>
-        <ul>
-         <!--   <li>Buy milk</li> -->
-        </ul>
-        <input type="text" id="name" name="name" size="30">
-        <input type="number" id="darab" name="darab" size="4">
-        <!-- <button id="btn1">add todo </button> -->
-        <button type="submit" id="kattincsButton">Bevitel</button>
-        <button type="submit" id="torles">todo lista törlése</button>
+            <h2>Todos</h2>
+            <div id=lista>
+                <ul>        
+                </ul>
+            </div>
         <!--Initialize JQUERY-->
-
+            <button type="submit" id="torles" style="width: 350px">todo lista törlése</button>
+        </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         
         <!--Initialize Firebase-->
