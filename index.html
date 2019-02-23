@@ -2,12 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
 <body>
-    <h1>Puszi Mókus!</h1>
-    <img src="http://www.evamagazin.hu/data/cikk/114/114748.1160x480.jpg">
+
+
+       
+
+
+    <h1>My simple todo list</h1>
+    <h2>Todos</h2>
+    <ul>
+        <li>Buy milk</li>
+    </ul>
+    <input type="text" id="name" name="name" size="30">
+    <button id="btn1">add todo </button>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyD8ZhjaCRmdm6NiE6s7R659P0Z8L5JnCVk",
+        authDomain: "project-78c3e.firebaseapp.com",
+        databaseURL: "https://project-78c3e.firebaseio.com",
+        projectId: "project-78c3e",
+        storageBucket: "project-78c3e.appspot.com",
+        messagingSenderId: "1006822631027"
+    };
+    firebase.initializeApp(config);
+    </script>
+    <script src="index.js"></script>
+
+    
 </body>
 </html>
