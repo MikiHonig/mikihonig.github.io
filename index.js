@@ -8,9 +8,13 @@ fb = firebase.database();
 
 fb.ref("todo").once('value').then(data => {
   data.forEach(element => {
-    $('ul').append(`<li> ${element.child('name').val()} ${element.child('darab').val()}</li>`);
+    $('ul').append(`<li id=${element.key}> ${element.child('name').val()} ${element.child('darab').val()}</li>`);
+  // console.log(element.key);
   })
+  
 });
+
+
 
 // gombnyomas
 
@@ -28,6 +32,8 @@ $('#kattincsButton').on('click', (event) => {
 
   document.getElementById('name').value = '';
   document.getElementById('darab').value = '';
+
+  location.reload(true);
 
 });
 
@@ -53,8 +59,15 @@ $('#kattincsButton').on('click', (event) => {
 //   document.getElementById('name').value = '';}
 // });
 
-$('ul').on('click', (event) => {
-  $(event.target).css('text-decoration', 'line-through')
+// $('ul').on('click', (event) => {
+//   $(event.target).css('text-decoration', 'line-through')
+//   console.log (event.target.id)
+// });
+
+$('ul').on('click', (event) => {  
+  console.log(event.target.id);
+  fb.ref(`todo/${event.target.id}`).remove();
+  location.reload(true);  
 });
 
 $('#torles').on('click', (torles) => {
