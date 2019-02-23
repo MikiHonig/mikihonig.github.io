@@ -1,26 +1,17 @@
-// const buttonElement1 = document.getElementById('btn1');
-// let ujtodo=1;
-
-
 fb = firebase.database();
 
 // adatok importalasa az adatbazisbol
-
-fb.ref("todo").once('value').then(data => {
-  data.forEach(element => {
-    $('ul').append(`<li id=${element.key}> ${element.child('name').val()} ${element.child('darab').val()}</li>`);
-  // console.log(element.key);
-  })
-  
-});
-
-
+  $('ul').empty();
+    fb.ref("todo").once('value').then(data => {
+      data.forEach(element => {
+        $('ul').append(`<li id=${element.key}> ${element.child('name').val()} ${element.child('darab').val()}</li>`);
+      })  
+    });
 
 // gombnyomas
-
 $('#kattincsButton').on('click', (event) => {
   event.preventDefault();
-  let ujtodo = $('#name').val();
+  let ujtodo = $('#name').val(); 
   let ujdarab = $('#darab').val();
   let dataToSave = {name: ujtodo, darab: ujdarab};
   
@@ -33,8 +24,12 @@ $('#kattincsButton').on('click', (event) => {
   document.getElementById('name').value = '';
   document.getElementById('darab').value = '';
 
-  location.reload(true);
-
+  $('ul').empty();
+  fb.ref("todo").once('value').then(data => {
+    data.forEach(element => {
+      $('ul').append(`<li id=${element.key}> ${element.child('name').val()} ${element.child('darab').val()}</li>`);
+    })  
+  });
 });
 
 // buttonElement1.addEventListener('click', function (event) {
@@ -64,13 +59,20 @@ $('#kattincsButton').on('click', (event) => {
 //   console.log (event.target.id)
 // });
 
+// egy elem torlese
 $('ul').on('click', (event) => {  
-  console.log(event.target.id);
+  console.log(event.target.id);    
   fb.ref(`todo/${event.target.id}`).remove();
-  location.reload(true);  
+  $('ul').empty();
+  fb.ref("todo").once('value').then(data => {
+    data.forEach(element => {
+      $('ul').append(`<li id=${element.key}> ${element.child('name').val()} ${element.child('darab').val()}</li>`);
+    })  
+  });  
 });
 
+// lista torlese
 $('#torles').on('click', (torles) => {
+  $('ul').empty();
   fb.ref("todo").remove();
-  location.reload(true);
 });
