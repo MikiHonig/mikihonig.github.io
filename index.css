@@ -4,7 +4,7 @@ li:hover {
 
 #lista {
     border: 2px solid black;
-    width: 346px;
+    width: 346pt;
     background-color: rgb(243, 140, 174);
 }
 
@@ -16,7 +16,7 @@ div {
     border: 2px solid black;
     padding-left: 30px;
     padding-bottom: 30px;
-    width: 383px;
+    width: 383pt;
     background-color: lightblue
 }
 
